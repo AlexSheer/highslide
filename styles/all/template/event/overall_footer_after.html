@@ -119,6 +119,12 @@ function add_highslide(e, elements) {
 $(document).ready(function (e) {
 	add_highslide(e, $(document));
 });
+	
+// Compatibility with SimpleSpoiler extension by Alfredo Ramos
+$('div.spoiler').click(function(e) {
+	add_highslide(e, $(document));
+});
+
 $('#qr_posts').on('qr_completed', add_highslide);
 $('#qr_postform').on('ajax_submit_preview', function (e) {
 	add_highslide(e, $('#preview'));
